@@ -2,7 +2,7 @@
 // when meal time
 var meal=require('./meal');
 var time=require("time");
-const __test__=true;
+const __test__=false;
 
 function repeat() {
     // check time
