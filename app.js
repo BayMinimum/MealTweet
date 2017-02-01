@@ -62,6 +62,6 @@ http.createServer((req, res)=>{
     res.writeHead(200);
     res.write('<html><head><title>MealTweet Bot</title></head><body>This bot is running:)');
     res.end('</body></html>');
-}).listen(8080);
+}).listen(process.env.PORT || 8080);
 
-console.log("Listening on port 8080");
+console.log("HTTP server listening");
