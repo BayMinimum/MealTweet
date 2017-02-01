@@ -1,6 +1,6 @@
 {
   "name": "mealtweet",
-  "version": "0.0.1",
+  "version": "0.7.0",
   "description": "Tweet every KSA meal",
   "main": "app.js",
   "scripts": {
@@ -18,6 +18,8 @@
   "homepage": "https://github.com/BayMinimum/MealTweet#readme",
   "dependencies": {
     "cheerio": "^0.22.0",
-    "iconv-lite": "^0.4.15"
+    "iconv-lite": "^0.4.15",
+    "time": "^0.11.4",
+    "twitter": "^1.7.0"
   }
 }
