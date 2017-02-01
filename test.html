@@ -1,0 +1,1078 @@
+<html lang="ko" class=" js flexbox flexboxlegacy canvas canvastext webgl no-touch geolocation postmessage websqldatabase indexeddb hashchange history draganddrop websockets rgba hsla multiplebgs backgroundsize borderimage borderradius boxshadow textshadow opacity cssanimations csscolumns cssgradients cssreflections csstransforms csstransforms3d csstransitions fontface generatedcontent video audio localstorage sessionstorage webworkers applicationcache svg inlinesvg smil svgclippaths"><head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>식단표 - 한국과학영재학교</title>
+    <link href="/Content/default?v=bG5IcHzonWv-pdemAIWJF_8ZaAuNXyq8mS39WPVLLIk1" rel="stylesheet">
+
+    <script async="" src="https://www.google-analytics.com/analytics.js"></script><script src="/bundles/modernizr?v=inCVuEFe6J4Q07A0AcRsbJic_UE5MwpRMNGcOtk94TE1"></script>
+
+
+
+    <link href="/Content/jqueryUi/jquery-ui.min.css" rel="stylesheet">
+    <link href="/Content/jqueryUi/jquery-ui.theme.min.css" rel="stylesheet">
+
+
+    <link href="/Content/app_custome.css" rel="stylesheet">
+</head>
+
+<body>
+<form action="/Home/Sub">
+    <input type="hidden" id="MenuId" name="Menuid" value="">
+    <input type="hidden" id="Cmd" name="Cmd" value="">
+    <input type="hidden" id="DataId" name="DataId" value="">
+</form>
+<div id="wrap">
+
+    <ul class="skipnavi">
+        <li>
+            <a href="#header">상단 바로가기</a>
+        </li>
+        <li>
+            <a href="#nav">메뉴 바로가기</a>
+        </li>
+        <li>
+            <a href="#kcontent">내용 바로가기</a>
+        </li>
+        <li>
+            <a href="#footer">하단 바로가기</a>
+        </li>
+    </ul>
+    <!-- end jump-link -->
+    <div id="header" class="clearfix navbar-fixed-top">
+        <div class="container">
+            <div class="nav_open_btn visible-xs">
+                <a href="#" title="메뉴열기">
+                    <i class="fa fa-bars"></i>
+                </a>
+            </div>
+            <div class="search_open_btn visible-xs">
+                <a href="#" title="검색창 열기">
+                    <i class="fa fa-search"></i><i class="fa fa-times" style="display: none;"></i>
+                </a>
+            </div>
+            <ul class="list-inline easy_use hidden-xs">
+                <li>
+                    <a href="#" class="zoomIn">
+                        <img src="/Content/images/zoomin-icon.png" alt="확대">
+                    </a>
+                </li>
+                <li>
+                    <a href="#" class="zoomInDown">
+                        <img src="/Content/images/zoomout-icon.png" alt="축소">
+                    </a>
+                </li>
+                <li>
+                    <a href="#" class="zoomReset">
+                        <img src="/Content/images/zoominit-icon.png" alt="기본">
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <img src="/Content/images/print-icon.png" alt="프린트">
+                    </a>
+                </li>
+                <li class="search-sm">
+                    <a href="#" class="search-open">
+                        <img src="../../Content/images/search-icon.png" alt="검색">
+                    </a> <a href="#" class="search-close" style="display: none;">
+                    <img src="../../Content/images/close-icon.png" alt="닫기">
+                </a>
+                </li>
+            </ul>
+            <form class="top-search" method="GET" action="/Search/Index">
+                <label class="sr-only" for="topsearchText">통합검색</label>
+                <input name="searchText" type="text" id="topsearchText">
+                <a href="#" class="fa fa-search" title="검색" onclick="$(this).closest('form').submit();"></a>
+            </form>
+
+            <ul class="list-inline top-link">
+                <li>
+                    <a href="/Account/Login">로그인</a>
+                </li>
+                <li>
+                    <a href="/Helper/SiteMap">사이트맵</a>
+                </li>
+                <li>
+                    <a href="/Eng">ENGLISH</a>
+                </li>
+            </ul>
+            <h1 class="logo">
+                <a href="/">
+                    <img src="../../Content/images/logo.png" alt="한국과학영재학교">
+                </a>
+            </h1>
+        </div>
+
+        <!--// .container -->
+
+    </div><!-- end .header -->
+    <div id="gnb" class="" style="left: -80%; z-index: 999;">
+        <div class="container">
+            <ul class="gnblist clearfix">
+                <li class="main-menu1">
+                    <a href="#">
+                        <span class="glyphicon glyphicon-plus"></span> 학교정보</a>
+
+                    <ul class="submenu" style="display: none; height: 280px; padding-top: 10px; margin-top: 0px; padding-bottom: 10px; margin-bottom: 0px;">
+                        <li>
+                            <a href="/Home/Sub/2">학교장 인사말</a>                                </li>
+                        <li>
+                            <a href="/Home/Sub/3">비전 및 교육목표</a>                                </li>
+                        <li>
+                            <a href="/Home/TeacherInfo/22">교직원소개</a>                                </li>
+                        <li>
+                            <a href="/Home/Sub/4">학교연혁</a>                                </li>
+                        <li>
+                            <a href="/Home/Sub/11">학교의 상징물<i class="fa fa-plus" style="display: inline-block;"></i><i class="fa fa-minus" style="display: none;"></i></a>
+                            <ul class="submenu03" style="">
+                                <li>
+                                    <a href="/Home/Sub/133">학교의상징물</a>                                                    </li>
+                                <li>
+                                    <a href="/Home/Board/186">KSA Video</a>                                                    </li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="/Home/Sub/12">학교현황<i class="fa fa-plus" style="display: inline-block;"></i><i class="fa fa-minus" style="display: none;"></i></a>
+                            <ul class="submenu03" style="">
+                                <li>
+                                    <a href="/Home/Sub/13">학교현황</a>                                                    </li>
+                                <li>
+                                    <a href="/Home/Sub/14">건물배치도</a>                                                    </li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="/Home/Sub/15">장학<i class="fa fa-plus" style="display: inline-block;"></i><i class="fa fa-minus" style="display: none;"></i></a>
+                            <ul class="submenu03" style="">
+                                <li>
+                                    <a href="/Home/Sub/16">장학제도</a>                                                    </li>
+                                <li>
+                                    <a href="/Home/Sub/18">장학금 수혜 현황</a>                                                    </li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="/Home/Sub/19">홍보자료<i class="fa fa-plus" style="display: inline-block;"></i><i class="fa fa-minus" style="display: none;"></i></a>
+                            <ul class="submenu03" style="">
+                                <li>
+                                    <a href="/Home/Board/20">홍보사진</a>                                                    </li>
+                                <li>
+                                    <a href="/Home/Board/21">동영상</a>                                                    </li>
+                                <li>
+                                    <a href="/Home/Board/181">언론보도자료</a>                                                    </li>
+                                <li>
+                                    <a href="/Home/Board/180">공개수업</a>                                                    </li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="/SchoolEvent/Index/135">학사일정</a>                                </li>
+                        <li>
+                            <a href="/Home/Sub/136">오시는길</a>                                </li>
+                    </ul>
+
+                </li>
+                <li class="main-menu2">
+                    <a href="#">
+                        <span class="glyphicon glyphicon-plus"></span> 교육정보</a>
+
+                    <ul class="submenu" style="display: none; height: 202px; padding-top: 10px; margin-top: 0px; padding-bottom: 10px; margin-bottom: 0px;">
+                        <li>
+                            <a href="/Home/Sub/24">교육과정<i class="fa fa-plus" style="display: inline-block;"></i><i class="fa fa-minus" style="display: none;"></i></a>
+                            <ul class="submenu03" style="">
+                                <li>
+                                    <a href="/Home/Sub/130">운영방침</a>                                                    </li>
+                                <li>
+                                    <a href="/Home/Sub/131">교육과정</a>                                                    </li>
+                                <li>
+                                    <a href="/Home/Board/132">교육계획서</a>                                                    </li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="/Home/Sub/28">학부소개</a>                                </li>
+                        <li>
+                            <a href="/Home/Sub/29">창의·연구활동<i class="fa fa-plus" style="display: inline-block;"></i><i class="fa fa-minus" style="display: none;"></i></a>
+                            <ul class="submenu03" style="">
+                                <li>
+                                    <a href="/Home/Sub/30">창의·연구활동</a>                                                    </li>
+                                <li>
+                                    <a href="/Home/Sub/31">국제공동연구</a>                                                    </li>
+                                <li>
+                                    <a href="/Home/Sub/32">국외 위탁교육</a>                                                    </li>
+                                <li>
+                                    <a href="/Home/Sub/33">국제학술대회 및 국제과학영재 학술대회 참가</a>                                                    </li>
+                                <li>
+                                    <a href="/Home/Sub/34">우수논문 국내·외 발표</a>                                                    </li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="/Home/Sub/35">국제학술교류<i class="fa fa-plus" style="display: inline-block;"></i><i class="fa fa-minus" style="display: none;"></i></a>
+                            <ul class="submenu03" style="">
+                                <li>
+                                    <a href="/Home/Sub/36">교환학생 프로그램</a>                                                    </li>
+                                <li>
+                                    <a href="/Home/Sub/37">자매결연학교 소개</a>                                                    </li>
+                                <li>
+                                    <a href="/Home/Sub/38">교사교류 프로그램</a>                                                    </li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="/Home/Sub/39">리더십활동</a>                                </li>
+                        <li>
+                            <a href="/Home/Sub/40">창의교육지원센터</a>                                </li>
+                        <li>
+                            <a href="/Home/Sub/42">특별프로그램<i class="fa fa-plus" style="display: inline-block;"></i><i class="fa fa-minus" style="display: none;"></i></a>
+                            <ul class="submenu03" style="">
+                                <li>
+                                    <a href="/Home/Sub/43">KSASF</a>                                                    </li>
+                                <li>
+                                    <a href="/Home/Sub/44">초청특강</a>                                                    </li>
+                                <li>
+                                    <a href="/Home/Sub/45">KSA 과학영재교육 포럼</a>                                                    </li>
+                                <li>
+                                    <a href="/Home/Sub/46">과학체험교실</a>                                                    </li>
+                                <li>
+                                    <a href="/Home/Sub/47">과학영재학교 R&amp;E 및 우수연구 공동발표회</a>                                                    </li>
+                                <li>
+                                    <a href="/Home/Sub/49">과학기술경영</a>                                                    </li>
+                                <li>
+                                    <a href="/Home/Sub/50">창의공학</a>                                                    </li>
+                            </ul>
+                        </li>
+                    </ul>
+
+                </li>
+                <li class="main-menu3">
+                    <a href="http://admission.ksa.hs.kr" title="입학안내  사이트로 연결" target="_blank" class="link_icon">
+                        <span class="glyphicon glyphicon-plus"></span> 입학안내<i class="fa fa-clone"></i>
+                    </a>
+
+                    <ul class="submenu" style="display: none; height: 46px; padding-top: 10px; margin-top: 0px; padding-bottom: 10px; margin-bottom: 0px;">
+                        <li>
+                            <a href="http://admission.ksa.hs.kr" target="_blank">입학안내</a>
+                        </li>
+                    </ul>
+
+                </li>
+                <li class="main-menu4">
+                    <a href="#">
+                        <span class="glyphicon glyphicon-plus"></span> 학교생활</a>
+
+                    <ul class="submenu" style="display: none; height: 306px; padding-top: 10px; margin-top: 0px; padding-bottom: 10px; margin-bottom: 0px;">
+                        <li>
+                            <a href="/Home/Sub/51">도서관</a>                                </li>
+                        <li>
+                            <a href="/Counsel" target="_blank">상담실</a>
+                        </li>
+                        <li>
+                            <a href="/Home/Sub/187">보건실<i class="fa fa-plus" style="display: inline-block;"></i><i class="fa fa-minus" style="display: none;"></i></a>
+                            <ul class="submenu03" style="">
+                                <li>
+                                    <a href="/Home/Sub/188">보건실</a>                                                    </li>
+                                <li>
+                                    <a href="/Home/Board/189">게시판</a>                                                    </li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="/Home/Sub/56">생활관</a>                                </li>
+                        <li>
+                            <a href="/Home/Sub/57">학생 성장센터</a>                                </li>
+                        <li>
+                            <a href="/Home/Application/58">과학체험교실신청</a>                                </li>
+                        <li>
+                            <a href="/Home/Application/59">학교견학신청</a>                                </li>
+                        <li>
+                            <a href="/Home/Sub/60">백양관<i class="fa fa-plus" style="display: inline-block;"></i><i class="fa fa-minus" style="display: none;"></i></a>
+                            <ul class="submenu03" style="">
+                                <li>
+                                    <a href="/Home/Board/61">백양관 게시판</a>                                                    </li>
+                                <li>
+                                    <a href="/Home/BackYang/62">백양관 예약</a>                                                    </li>
+                                <li>
+                                    <a href="/Home/BackYangQuery/63">백양관 예약내역</a>                                                    </li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="/Home/Sub/64">창조관<i class="fa fa-plus" style="display: inline-block;"></i><i class="fa fa-minus" style="display: none;"></i></a>
+                            <ul class="submenu03" style="">
+                                <li>
+                                    <a href="/Home/Sub/65">사용절차 및 이용안내</a>                                                    </li>
+                                <li>
+                                    <a href="/Home/SearchMachine/66">기기검색</a>                                                    </li>
+                                <li>
+                                    <a href="/Home/Booking/67">기기예약</a>                                                    </li>
+                                <li>
+                                    <a href="/Home/BookList/68">예약현황 및 조회</a>                                                    </li>
+                                <li>
+                                    <a href="/Home/Board/69">자료실</a>                                                    </li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="/Home/Sub/70">급식관리<i class="fa fa-plus" style="display: inline-block;"></i><i class="fa fa-minus" style="display: none;"></i></a>
+                            <ul class="submenu03" style="">
+                                <li>
+                                    <a href="/Home/CafeteriaMenu/72">식단표</a>                                                    </li>
+                                <li>
+                                    <a href="/Home/Board/141">급식게시판</a>                                                    </li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="/Account/Login/142">교재신청</a>
+                        </li>
+                    </ul>
+
+                </li>
+                <li class="main-menu5">
+                    <a href="#">
+                        <span class="glyphicon glyphicon-plus"></span> 커뮤니티</a>
+
+                    <ul class="submenu" style="display: none; height: 98px; padding-top: 10px; margin-top: 0px; padding-bottom: 10px; margin-bottom: 0px;">
+                        <li>
+                            <a href="/Account/Login/73">재학생 게시판</a>
+                        </li>
+                        <li>
+                            <a href="/Home/Board/75">학부모 게시판</a>                                </li>
+                        <li>
+                            <a href="/Account/Login/76">졸업생 게시판</a>
+                        </li>
+                    </ul>
+
+                </li>
+                <li class="main-menu6">
+                    <a href="#">
+                        <span class="glyphicon glyphicon-plus"></span> 정보서비스</a>
+
+                    <ul class="submenu" style="display: none; height: 192px; padding-top: 10px; margin-top: 0px; padding-bottom: 10px; margin-bottom: 0px;">
+                        <li>
+                            <a href="/Home/Sub/77">학교소식<i class="fa fa-plus" style="display: inline-block;"></i><i class="fa fa-minus" style="display: none;"></i></a>
+                            <ul class="submenu03" style="">
+                                <li>
+                                    <a href="/Home/Board/78">공지사항</a>                                                    </li>
+                                <li>
+                                    <a href="/Home/Board/79">언론보도</a>                                                    </li>
+                                <li>
+                                    <a href="/Home/Board/80">학내소식</a>                                                    </li>
+                                <li>
+                                    <a href="/Home/Board/137">영문공지사항</a>                                                    </li>
+                                <li>
+                                    <a href="/Home/Board/139">주간일정</a>                                                    </li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="/Home/Sub/81">민원 서비스<i class="fa fa-plus" style="display: inline-block;"></i><i class="fa fa-minus" style="display: none;"></i></a>
+                            <ul class="submenu03" style="">
+                                <li>
+                                    <a href="/Home/Suggest/82">건의함</a>                                                    </li>
+                                <li>
+                                    <a href="/Home/Suggest/83">저작권 신고</a>                                                    </li>
+                                <li>
+                                    <a href="/Home/Sub/84">개인정보처리방침</a>                                                    </li>
+                                <li>
+                                    <a href="/Home/Sub/85">이메일집단수집거부</a>                                                    </li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="/Home/Board/86">학교 규정집</a>                                </li>
+                        <li>
+                            <a href="/Home/Board/105">정보보호/정보윤리자료실</a>                                </li>
+                        <li>
+                            <a href="/Home/Sub/106">정보공개방<i class="fa fa-plus" style="display: inline-block;"></i><i class="fa fa-minus" style="display: none;"></i></a>
+                            <ul class="submenu03" style="">
+                                <li>
+                                    <a href="/Home/Sub/108">정보공개제도안내</a>                                                    </li>
+                                <li>
+                                    <a href="/Home/Sub/109">비공개세부기준</a>                                                    </li>
+                                <li>
+                                    <a href="/Home/Board/111">정보목록공개</a>                                                    </li>
+                                <li>
+                                    <a href="https://www.open.go.kr/" target="_blank">정보공개창구</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="/Home/Sub/107">학교정보공시<i class="fa fa-plus" style="display: inline-block;"></i><i class="fa fa-minus" style="display: none;"></i></a>
+                            <ul class="submenu03" style="">
+                                <li>
+                                    <a href="/Home/Sub/113">학교정보공시목록</a>                                                    </li>
+                                <li>
+                                    <a href="/Home/Board/114">학교규칙 및 학교운영규정</a>                                                    </li>
+                                <li>
+                                    <a href="/Home/Board/115">교육과정 편성 및 변동상황</a>                                                    </li>
+                                <li>
+                                    <a href="/Home/Board/116">학생현황 및 변동상황</a>                                                    </li>
+                                <li>
+                                    <a href="/Home/Board/182">학년별/교과별학습현황</a>                                                    </li>
+                                <li>
+                                    <a href="/Home/Board/117">학교시설</a>                                                    </li>
+                                <li>
+                                    <a href="/Home/Board/118">교원현황</a>                                                    </li>
+                                <li>
+                                    <a href="/Home/Board/119">학교회계</a>                                                    </li>
+                                <li>
+                                    <a href="/Home/Board/120">기관장업무추진비</a>                                                    </li>
+                                <li>
+                                    <a href="/Home/Board/121">학교자문위원회</a>                                                    </li>
+                                <li>
+                                    <a href="/Home/Board/122">학교급식</a>                                                    </li>
+                                <li>
+                                    <a href="/Home/Board/123">보건/환경위생 및 안전관리</a>                                                    </li>
+                                <li>
+                                    <a href="/Home/Board/124">학교폭력</a>                                                    </li>
+                                <li>
+                                    <a href="/Home/Board/125">입학생 및 졸업생 현황</a>                                                    </li>
+                                <li>
+                                    <a href="/Home/Board/127">고교프로파일</a>                                                    </li>
+                                <li>
+                                    <a href="/Home/Board/183">우리학교 최고</a>                                                    </li>
+                                <li>
+                                    <a href="/Home/Board/126">기 타</a>                                                    </li>
+                            </ul>
+                        </li>
+                    </ul>
+
+                </li>
+                <li class="main-menu7">
+                    <a href="#">
+                        <span class="glyphicon glyphicon-plus"></span> 발전기금</a>
+
+                    <ul class="submenu" style="display: none; height: 202px; padding-top: 10px; margin-top: 0px; padding-bottom: 10px; margin-bottom: 0px;">
+                        <li>
+                            <a href="/Home/Sub/93">인사말</a>                                </li>
+                        <li>
+                            <a href="/DevelopFund/Index/94">기금현황</a>                                </li>
+                        <li>
+                            <a href="/Home/Sub/95">기금용도</a>                                </li>
+                        <li>
+                            <a href="/DevelopFund/Donate/96">기금 참여하기</a>                                </li>
+                        <li>
+                            <a href="/Home/Sub/97">기부자 예우</a>                                </li>
+                        <li>
+                            <a href="/DevelopFund/MyPage/98">마이 페이지</a>                                </li>
+                        <li>
+                            <a href="/Home/Sub/99">장학후원회<i class="fa fa-plus" style="display: inline-block;"></i><i class="fa fa-minus" style="display: none;"></i></a>
+                            <ul class="submenu03" style="">
+                                <li>
+                                    <a href="/Home/Board/100">장학금 후원방법</a>                                                    </li>
+                                <li>
+                                    <a href="/Home/Board/102">역대장학후원회 현황</a>                                                    </li>
+                                <li>
+                                    <a href="/Home/Board/103">Photo Gallery</a>                                                    </li>
+                            </ul>
+                        </li>
+                    </ul>
+
+                </li>
+            </ul>
+        </div>
+    </div>
+    <!--// nav -->
+    <div class="sub-con">
+
+        <link rel="stylesheet" type="text/css" href="/Content/fonts.css">
+        <div class="container clearfix borderL">
+            <nav class="side_content hidden-xs">
+                <h2 class="sub_title">
+                    학교생활 <span>Campus Life</span> </h2>
+                <ul class="sub_gnb">
+                    <li>
+                        <a class="" href="/Home/Sub/51">도서관</a>                </li>
+                    <li>
+                        <a href="/Counsel" target="_blank">상담실</a>
+                    </li>
+                    <li>
+                        <a href="#" class="dropdown-collapse">
+                            보건실<i class="fa fa-plus"></i><i class="fa fa-minus" style="display: none;"></i>
+                        </a>
+                        <ul class="sub_gnb2">
+                            <li>
+                                <a class="" href="/Home/Sub/188">보건실</a>                                </li>
+                            <li>
+                                <a class="" href="/Home/Board/189">게시판</a>                                </li>
+                        </ul>
+                    </li>
+                    <li>
+                    </li>
+                    <li>
+                        <a class="" href="/Home/Sub/56">생활관</a>                </li>
+                    <li>
+                        <a class="" href="/Home/Sub/57">학생 성장센터</a>                </li>
+                    <li>
+                        <a class="" href="/Home/Application/58">과학체험교실신청</a>                </li>
+                    <li>
+                        <a class="" href="/Home/Application/59">학교견학신청</a>                </li>
+                    <li>
+                        <a href="#" class="dropdown-collapse">
+                            백양관<i class="fa fa-plus"></i><i class="fa fa-minus" style="display: none;"></i>
+                        </a>
+                        <ul class="sub_gnb2">
+                            <li>
+                                <a class="" href="/Home/Board/61">백양관 게시판</a>                                </li>
+                            <li>
+                                <a class="" href="/Home/BackYang/62">백양관 예약</a>                                </li>
+                            <li>
+                                <a class="" href="/Home/BackYangQuery/63">백양관 예약내역</a>                                </li>
+                        </ul>
+                    </li>
+                    <li>
+                    </li>
+                    <li>
+                        <a href="#" class="dropdown-collapse">
+                            창조관<i class="fa fa-plus"></i><i class="fa fa-minus" style="display: none;"></i>
+                        </a>
+                        <ul class="sub_gnb2">
+                            <li>
+                                <a class="" href="/Home/Sub/65">사용절차 및 이용안내</a>                                </li>
+                            <li>
+                                <a class="" href="/Account/Login/66">기기검색</a>
+                            </li>
+                            <li>
+                                <a class="" href="/Account/Login/67">기기예약</a>
+                            </li>
+                            <li>
+                                <a class="" href="/Account/Login/68">예약현황 및 조회</a>
+                            </li>
+                            <li>
+                                <a class="" href="/Home/Board/69">자료실</a>                                </li>
+                        </ul>
+                    </li>
+                    <li>
+                    </li>
+                    <li>
+                        <a href="#" class="dropdown-collapse menu-container select">
+                            급식관리<i class="fa fa-plus" style="display: none;"></i><i class="fa fa-minus" style="display: block;"></i>
+                        </a>
+                        <ul class="sub_gnb2" style="display: block;">
+                            <li>
+                                <a class="select" href="/Home/CafeteriaMenu/72">식단표</a>                                </li>
+                            <li>
+                                <a class="" href="/Home/Board/141">급식게시판</a>                                </li>
+                        </ul>
+                    </li>
+                    <li>
+                    </li>
+                    <li>
+                        <a class="" href="/Account/Login/142">교재신청</a>
+                    </li>
+                </ul>
+            </nav>
+            <!--//sub-nav-->
+            <div class="sub_content clearfix" id="kcontent">
+                <div class="page_top">
+                    <p class="page_location">
+                        <a href="/Eng" title="To Home">
+                            <i class="fa fa-home"></i>
+                        </a><span><a href="/Home/Sub?menuId=7">학교생활</a></span>
+                        <span><a href="/Home/Sub?menuId=70">급식관리</a></span>
+                        <span>식단표</span>
+                    </p>
+                    <h2 class="page_title">식단표</h2>
+                    <span class="page_text hidden-xs">KSA! The Science-Gifted Institute Leading the Future</span>
+                </div>
+                <!-- .page_top end (상단 타이틀과 정보) -->
+                <div class="page_content">
+
+
+                    <div class="row mgt15">
+                        <div class="col-sm-5">
+                            <div id="datepicker" class="calendar hasDatepicker"><div class="ui-datepicker-inline ui-datepicker ui-widget ui-widget-content ui-helper-clearfix ui-corner-all" style="display: block;"><div class="ui-datepicker-header ui-widget-header ui-helper-clearfix ui-corner-all"><a class="ui-datepicker-prev ui-corner-all" data-handler="prev" data-event="click" title="이전 달"><span class="ui-icon ui-icon-circle-triangle-w">이전 달</span></a><a class="ui-datepicker-next ui-corner-all" data-handler="next" data-event="click" title="다음 달"><span class="ui-icon ui-icon-circle-triangle-e">다음 달</span></a><div class="ui-datepicker-title"><span class="ui-datepicker-year">2016</span>년&nbsp;<span class="ui-datepicker-month">12월</span></div></div><table class="ui-datepicker-calendar"><thead><tr><th scope="col" class="ui-datepicker-week-end"><span title="일요일">일</span></th><th scope="col"><span title="월요일">월</span></th><th scope="col"><span title="화요일">화</span></th><th scope="col"><span title="수요일">수</span></th><th scope="col"><span title="목요일">목</span></th><th scope="col"><span title="금요일">금</span></th><th scope="col" class="ui-datepicker-week-end"><span title="토요일">토</span></th></tr></thead><tbody><tr><td class=" ui-datepicker-week-end ui-datepicker-other-month ui-datepicker-unselectable ui-state-disabled">&nbsp;</td><td class=" ui-datepicker-other-month ui-datepicker-unselectable ui-state-disabled">&nbsp;</td><td class=" ui-datepicker-other-month ui-datepicker-unselectable ui-state-disabled">&nbsp;</td><td class=" ui-datepicker-other-month ui-datepicker-unselectable ui-state-disabled">&nbsp;</td><td class=" " data-handler="selectDay" data-event="click" data-month="11" data-year="2016"><a class="ui-state-default" href="#">1</a></td><td class=" " data-handler="selectDay" data-event="click" data-month="11" data-year="2016"><a class="ui-state-default" href="#">2</a></td><td class=" ui-datepicker-week-end " data-handler="selectDay" data-event="click" data-month="11" data-year="2016"><a class="ui-state-default" href="#">3</a></td></tr><tr><td class=" ui-datepicker-week-end " data-handler="selectDay" data-event="click" data-month="11" data-year="2016"><a class="ui-state-default" href="#">4</a></td><td class=" " data-handler="selectDay" data-event="click" data-month="11" data-year="2016"><a class="ui-state-default" href="#">5</a></td><td class=" " data-handler="selectDay" data-event="click" data-month="11" data-year="2016"><a class="ui-state-default" href="#">6</a></td><td class=" " data-handler="selectDay" data-event="click" data-month="11" data-year="2016"><a class="ui-state-default" href="#">7</a></td><td class=" " data-handler="selectDay" data-event="click" data-month="11" data-year="2016"><a class="ui-state-default" href="#">8</a></td><td class=" " data-handler="selectDay" data-event="click" data-month="11" data-year="2016"><a class="ui-state-default" href="#">9</a></td><td class=" ui-datepicker-week-end " data-handler="selectDay" data-event="click" data-month="11" data-year="2016"><a class="ui-state-default" href="#">10</a></td></tr><tr><td class=" ui-datepicker-week-end " data-handler="selectDay" data-event="click" data-month="11" data-year="2016"><a class="ui-state-default" href="#">11</a></td><td class=" " data-handler="selectDay" data-event="click" data-month="11" data-year="2016"><a class="ui-state-default" href="#">12</a></td><td class=" " data-handler="selectDay" data-event="click" data-month="11" data-year="2016"><a class="ui-state-default" href="#">13</a></td><td class=" " data-handler="selectDay" data-event="click" data-month="11" data-year="2016"><a class="ui-state-default" href="#">14</a></td><td class=" " data-handler="selectDay" data-event="click" data-month="11" data-year="2016"><a class="ui-state-default" href="#">15</a></td><td class="  ui-datepicker-current-day" data-handler="selectDay" data-event="click" data-month="11" data-year="2016"><a class="ui-state-default ui-state-active" href="#">16</a></td><td class=" ui-datepicker-week-end " data-handler="selectDay" data-event="click" data-month="11" data-year="2016"><a class="ui-state-default" href="#">17</a></td></tr><tr><td class=" ui-datepicker-week-end " data-handler="selectDay" data-event="click" data-month="11" data-year="2016"><a class="ui-state-default" href="#">18</a></td><td class=" " data-handler="selectDay" data-event="click" data-month="11" data-year="2016"><a class="ui-state-default" href="#">19</a></td><td class=" " data-handler="selectDay" data-event="click" data-month="11" data-year="2016"><a class="ui-state-default" href="#">20</a></td><td class=" " data-handler="selectDay" data-event="click" data-month="11" data-year="2016"><a class="ui-state-default" href="#">21</a></td><td class=" " data-handler="selectDay" data-event="click" data-month="11" data-year="2016"><a class="ui-state-default" href="#">22</a></td><td class=" " data-handler="selectDay" data-event="click" data-month="11" data-year="2016"><a class="ui-state-default" href="#">23</a></td><td class=" ui-datepicker-week-end " data-handler="selectDay" data-event="click" data-month="11" data-year="2016"><a class="ui-state-default" href="#">24</a></td></tr><tr><td class=" ui-datepicker-week-end " data-handler="selectDay" data-event="click" data-month="11" data-year="2016"><a class="ui-state-default" href="#">25</a></td><td class=" " data-handler="selectDay" data-event="click" data-month="11" data-year="2016"><a class="ui-state-default" href="#">26</a></td><td class=" " data-handler="selectDay" data-event="click" data-month="11" data-year="2016"><a class="ui-state-default" href="#">27</a></td><td class=" " data-handler="selectDay" data-event="click" data-month="11" data-year="2016"><a class="ui-state-default" href="#">28</a></td><td class=" " data-handler="selectDay" data-event="click" data-month="11" data-year="2016"><a class="ui-state-default" href="#">29</a></td><td class=" " data-handler="selectDay" data-event="click" data-month="11" data-year="2016"><a class="ui-state-default" href="#">30</a></td><td class=" ui-datepicker-week-end " data-handler="selectDay" data-event="click" data-month="11" data-year="2016"><a class="ui-state-default" href="#">31</a></td></tr></tbody></table></div></div>
+                        </div>
+                        <div class="col-sm-7 day-menu"><div class="clearfix">
+                            <p class="meal-date">
+                                2016 년 12월 16일    </p>
+                            <h6 class="title-date text-meal">오늘의 메뉴</h6>
+                        </div>
+                            <table class="table table-bordered meal">
+                                <tbody><tr>
+                                    <th class="text-center th-bg" scope="row">아침</th>
+                                    <th class="text-center" scope="row">점심</th>
+                                    <th class="text-center th-bg" scope="row">저녁</th>
+                                </tr>
+                                <tr>
+                                    <td class="text-center" scope="row">
+                                        <ul class="list-unstyled text-center">
+                                            <li>
+                                                생크림삼각토스트①②⑥</li>
+                                            <li> 우유②
+                                                방울토마토⑫
+                                                발아현미밥
+                                                떡국(한우)①⑤⑥⑯
+                                                고구마순들깨볶음⑤⑥
+                                                멸치고추장볶음⑤⑥
+                                                배추김치⑨
+                                            </li>
+                                        </ul>
+                                    </td>
+                                    <td class="text-center th-bg" scope="row">
+                                        <ul class="list-unstyled text-center">
+                                            <li>
+                                                팥밥
+                                                쇠고기미역국(한우)⑤⑥⑯
+                                                등갈비양념오븐구이⑤⑥⑩
+                                                과일샐러드&amp;요거트②
+                                                오이무생채
+                                                배추김치⑨
+                                                치즈케익①②⑥
+                                                (학생간식-캐플쥬스)</li>
+                                        </ul>
+                                    </td>
+                                    <td class="text-center" scope="row">
+                                        <ul class="list-unstyled text-center">
+                                            <li>
+                                                잡곡밥⑤
+                                                호박국⑤⑥
+                                                훈제오리구이&amp;소스⑤⑥
+                                                해물마파두부⑤⑥⑰
+                                                우엉곤약조림⑤⑥
+                                                배추김치⑨
+                                            </li>
+                                        </ul>
+                                    </td>
+                                </tr>
+                                </tbody></table></div>
+                    </div>
+                    <!-- Nav tabs -->
+                    <ul class="nav nav-tabs meal-tab" role="tablist">
+                        <li role="presentation" class="active">
+                            <a href="#20170129" aria-controls="#20170129" role="tab" data-toggle="tab">
+                                01.29 - 02.04
+                            </a>
+                        </li>
+                        <li role="presentation">
+                            <a href="#20170205" aria-controls="#20170205" role="tab" data-toggle="tab">
+                                02.05 - 02.11
+                            </a>
+                        </li>
+                        <li role="presentation">
+                            <a href="#20170212" aria-controls="#20170212" role="tab" data-toggle="tab">
+                                02.12 - 02.18
+                            </a>
+                        </li>
+                        <li role="presentation">
+                            <a href="#20170219" aria-controls="#20170219" role="tab" data-toggle="tab">
+                                02.19 - 02.25
+                            </a>
+                        </li>
+                        <li role="presentation">
+                            <a href="#20170226" aria-controls="#20170226" role="tab" data-toggle="tab">
+                                02.26 - 03.04
+                            </a>
+                        </li>
+                    </ul>
+
+                    <!-- Tab panes -->
+                    <div class="tab-content meal-con">
+                        <div role="tabpanel" class="tab-pane active" id="20170129">
+                            <div class="table-responsive">
+                                <table class="table table01">
+                                    <tbody><tr>
+                                        <th scope="row" class="w-lg text-center">일 자</th>
+                                        <td class="text-center vertical-m">
+                                            <strong>식 단 내 용</strong>
+                                        </td>
+                                    </tr>
+                                    </tbody></table>
+                            </div>
+                        </div>
+                        <div role="tabpanel" class="tab-pane " id="20170205">
+                            <div class="table-responsive">
+                                <table class="table table01">
+                                    <tbody><tr>
+                                        <th scope="row" class="w-lg text-center">일 자</th>
+                                        <td class="text-center vertical-m">
+                                            <strong>식 단 내 용</strong>
+                                        </td>
+                                    </tr>
+                                    </tbody></table>
+                            </div>
+                        </div>
+                        <div role="tabpanel" class="tab-pane " id="20170212">
+                            <div class="table-responsive">
+                                <table class="table table01">
+                                    <tbody><tr>
+                                        <th scope="row" class="w-lg text-center">일 자</th>
+                                        <td class="text-center vertical-m">
+                                            <strong>식 단 내 용</strong>
+                                        </td>
+                                    </tr>
+                                    </tbody></table>
+                            </div>
+                        </div>
+                        <div role="tabpanel" class="tab-pane " id="20170219">
+                            <div class="table-responsive">
+                                <table class="table table01">
+                                    <tbody><tr>
+                                        <th scope="row" class="w-lg text-center">일 자</th>
+                                        <td class="text-center vertical-m">
+                                            <strong>식 단 내 용</strong>
+                                        </td>
+                                    </tr>
+                                    </tbody></table>
+                            </div>
+                        </div>
+                        <div role="tabpanel" class="tab-pane " id="20170226">
+                            <div class="table-responsive">
+                                <table class="table table01">
+                                    <tbody><tr>
+                                        <th scope="row" class="w-lg text-center">일 자</th>
+                                        <td class="text-center vertical-m">
+                                            <strong>식 단 내 용</strong>
+                                        </td>
+                                    </tr>
+                                    </tbody></table>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="text-right">
+                    </div>
+
+
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <div id="footer">
+        <div class="f_list_link">
+            <div class="container">
+                <ul>
+                    <li>
+                        <a href="/Home/Sub/84">개인정보처리방침</a>
+                    </li>
+                    <li>
+                        <a href="/Home/Sub/85">이메일무단수집거부</a>
+                    </li>
+                    <!--li><a href="../Userguide/terms_use.html">이용약관</a></li-->
+                    <li>
+                        <a href="/Home/Sub/136">오시는길</a>
+                    </li>
+                    <li>&nbsp;</li>
+
+                </ul>
+            </div>
+        </div>
+        <div class="container">
+            <!-- 관련사이트 모음 (링크 바로연결) -->
+            <div class="family_site">
+                <a href="#">Family Site<i class="fa fa-caret-up"></i></a>
+                <ul class="family_site_open" style="display: none;">
+                    <li><a href="http://sas.ksa.hs.kr/" target="_blank">교직원웹</a></li>
+                    <li><a href="http://students.ksa.hs.kr/" target="_blank">학생웹</a></li>
+                    <li><a href="http://parents.ksa.hs.kr/" target="_blank">학부모웹</a></li>
+                    <li><a href="http://lms.ksa.hs.kr/" target="_blank">LMS</a></li>
+                    <li><a href="http://cc.ksa.hs.kr/" target="_blank">ECC</a></li>
+                    <li><a href="http://library.ksa.hs.kr/" target="_blank">도서관</a></li>
+                    <li><a href="https://gaonnuri.ksain.net/xe/?mid=login" target="_blank">학생회</a></li>
+                    <li><a href="/Home/Board/142" target="_blank">교재신청</a></li>
+                    <li><a href="http://admission.ksa.hs.kr/iphak_eng/" target="_blank">Admissions</a></li>
+                    <li><a href="http://www.schoolhealth.kr/" target="_blank">학생건강정보센터</a></li>
+                    <li><a href="http://rne.ksa.hs.kr/" target="_blank">KSA-Research Activities</a></li>
+                </ul>
+
+            </div>
+            <p class="f_number">
+                대표전화 : 051-897-0006<span>|</span>FAX : 051-894-0280<span>|</span>대표메일 : admin@ksa.hs.kr
+            </p>
+            <address>
+                47162 부산광역시 부산진구 백양관문로 105-47(당감동, 한국과학영재학교)
+            </address>
+            <p class="f_warning"> 저작물의 무단 전재 및 배포 시 저작권법 136조에 의거 최고 5년 이하의 징역 또는 5천만원 이하의 벌금에 처하거나 이를 병과할 수 있습니다. </p>
+            <p class="copy">Copyright (c) 2015 KOREA SCIENCE ACADEMY. ALL RIGHTS RESERVED.</p>
+        </div>
+    </div>
+    <!--//#footer-->
+    <div id="slide_quick">
+        <a href="#" class="slide_quick_btn">빠른메뉴</a>
+        <div class="slide_area">
+            <ul>
+                <li>
+                    <a href="http://sas.ksa.hs.kr/" target="_blank"><img src="/Content/images/quick_icon-9.png" alt="교직원웹 포털">&nbsp;교직원웹</a>
+                </li>
+                <li>
+                    <a href="http://students.ksa.hs.kr/" target="_blank"><img src="/Content/images/quick_icon-10.png" alt="학생웹 포털">&nbsp;학생웹</a>
+                </li>
+                <li>
+                    <a href="http://parents.ksa.hs.kr/" target="_blank"><img src="/Content/images/quick_icon-11.png" alt="학부모웹 포털">&nbsp;학부모웹</a>
+                </li>
+                <li>
+                    <a href="/Home/Sub/2"><img src="/Content/images/quick_icon-1.png" alt="학교장 인사말">&nbsp;학교장 인사말</a>
+                </li>
+                <li>
+                    <a href="/Home/Sub/3"><img src="/Content/images/quick_icon-2.png" alt="교육목표">&nbsp;교육목표</a>
+                </li>
+                <li>
+                    <a href="/Home/Sub/4"><img src="/Content/images/quick_icon-3.png" alt="학교연혁">&nbsp;학교연혁</a>
+                </li>
+                <li>
+                    <a href="/Home/Sub/16"><img src="/Content/images/quick_icon-4.png" alt="장학제도">&nbsp;장학제도</a>
+                </li>
+                <li>
+                    <a href="/Home/Sub/107"><img src="/Content/images/quick_icon-5.png" alt="학교 알리미">&nbsp;학교 알리미</a>
+                </li>
+                <li>
+                    <a href="/Home/Sub/28"><img src="/Content/images/quick_icon-6.png" alt="학부소개">&nbsp;학부소개</a>
+                </li>
+                <li>
+                    <a href="/Home/Suggest/82"><img src="/Content/images/quick_icon-7.png" alt="민원 서비스">&nbsp;민원 서비스</a>
+                </li>
+                <li>
+                    <a href="/Home/Sub/136"><img src="/Content/images/quick_icon-8.png" alt="오시는 길">&nbsp;오시는 길</a>
+                </li>
+            </ul>
+            <!--
+                        <div class="counsel_number">
+                            <p>
+                                <img src="~/Content/images/quick_icon-tel.png" alt="입학상담문의"> &nbsp;입학상담문의
+                            </p>
+                            <p class="call_number">051-606-2265</p>
+                            <p class="call_number">051-606-2273</p>
+                            <p class="call_number">051-606-2182</p>
+                        </div>
+            -->
+        </div>
+    </div>
+    <!-- #quick_btn end -->
+    <a href="#wrap" class="top_btn">상단으로</a>
+
+</div>
+<script src="/bundles/jquery?v=MUwaZlQJn5GzAHWcIdCtxyien7uWD535ET23r4alxFA1"></script>
+
+<script src="/bundles/bootstrap?v=OfX192nbUgK5NE8ftV4Ef6ToCtjUTli3wC5jn344bfM1"></script>
+
+<script src="/bundles/jqueryui?v=nmuMA-O4C0zphhL2ApoyudBi4v4VCXr0cCFlFmBK2eU1"></script>
+
+
+<script src="/Scripts/ksa.js"></script>
+<script src="/Scripts/jcarousellite_1.0.1.pack.js"></script>
+
+
+<script src="/Scripts/jquery-ui.min.js"></script>
+<script src="/Scripts/jquery.form.js"></script>
+<script src="/Scripts/slimbox2.js"></script>
+<script>
+    var loadUrl = '/Home/GetFoodMenu';
+    var addUrl = '/Home/AddFoodMenu';
+    var updUrl = '/Home/UpdateFoodMenu';
+    $(document).ready(function() {
+        $('#datepicker').datepicker({
+            closeText: "닫기", // Display text for close link
+            prevText: "이전 달", // Display text for previous month link
+            nextText: "다음 달", // Display text for next month link
+            currentText: "오늘", // Display text for current month link
+            monthNames: ["1월", "2월", "3월", "4월", "5월", "6월", "7월", "8월", "9월", "10월", "11월", "12월"], // Names of months for drop-down and formatting
+            monthNamesShort: ["1월", "2월", "3월", "4월", "5월", "6월", "7월", "8월", "9월", "10월", "11월", "12월"], // For formatting
+            dayNames: ["일요일", "월요일", "화요일", "수요일", "목요일", "금요일", "토요일"], // For formatting
+            dayNamesShort: ["일", "월", "화", "수", "목", "금", "토"], // For formatting
+            dayNamesMin: ["일", "월", "화", "수", "목", "금", "토"], // Column headings for days starting at Sunday
+            weekHeader: "Wk", // Column header for week of the year
+            dateFormat: "yy-mm-dd", // See format options on parseDate
+            firstDay: 0, // The first day of the week, Sun = 0, Mon = 1, ...
+            isRTL: false, // True if right-to-left language, false if left-to-right
+            showMonthAfterYear: true, // True if the year select precedes month, false for month then year
+            yearSuffix: "년", // Additional text to append to the year in the month headers
+            onSelect: function(date) {
+                $('.day-menu').load(loadUrl + '?date=' + date);
+            }
+        });
+        $("div.ui-datepicker-header a.ui-datepicker-prev, div.ui-datepicker-header a.ui-datepicker-next").hide();
+        $('.add-menu').on('click', function(e) {
+            var addMenu = $('<div id="AddMenu"/>').appendTo("body").load(addUrl, function() {
+                addMenu.dialog("option", "position", { my: "center", at: "center", of: window });
+                $('#Date').datepicker({
+                    closeText: "닫기", // Display text for close link
+                    prevText: "이전 달", // Display text for previous month link
+                    nextText: "다음 달", // Display text for next month link
+                    currentText: "오늘", // Display text for current month link
+                    monthNames: ["1월", "2월", "3월", "4월", "5월", "6월", "7월", "8월", "9월", "10월", "11월", "12월"], // Names of months for drop-down and formatting
+                    monthNamesShort: ["1월", "2월", "3월", "4월", "5월", "6월", "7월", "8월", "9월", "10월", "11월", "12월"], // For formatting
+                    dayNames: ["일요일", "월요일", "화요일", "수요일", "목요일", "금요일", "토요일"], // For formatting
+                    dayNamesShort: ["일", "월", "화", "수", "목", "금", "토"], // For formatting
+                    dayNamesMin: ["일", "월", "화", "수", "목", "금", "토"], // Column headings for days starting at Sunday
+                    weekHeader: "Wk", // Column header for week of the year
+                    dateFormat: "yy-mm-dd", // See format options on parseDate
+                    firstDay: 0, // The first day of the week, Sun = 0, Mon = 1, ...
+                    isRTL: false, // True if right-to-left language, false if left-to-right
+                    showMonthAfterYear: true, // True if the year select precedes month, false for month then year
+                    yearSuffix: "년" // Additional text to append to the year in the month headers
+                });
+                $('.btn-save').on('click', function(e) {
+                    var url = $('#AddFoodMenuForm').attr("action");
+                    $('#AddFoodMenuForm').ajaxSubmit({
+                        url: url,
+                        type:"post",
+                        success:function() {
+                            addMenu.dialog('close');
+                            location.reload();
+                        }
+                    });
+
+                    //$.ajax({
+                    //    url: url,
+                    //    type: "POST",
+                    //    dataType: "Json",
+                    //    data: $('#AddFoodMenuForm').serialize(),
+                    //    success: function(msg) {
+                    //        if (msg.Result == 1) {
+                    //            addMenu.dialog('close');
+                    //            location.reload();
+                    //        } else {
+                    //            alert(msg.Message);
+                    //        }
+                    //    }
+                    //});
+                });
+                $('.btn-cancel').on('click', function () {
+                    addMenu.dialog('close');
+                });
+            }).dialog({
+                close: function(event, ui) {
+                    $('#AddMenu').remove();
+                },
+                title: '식단등록',
+                modal: true,
+                draggable: true,
+                width: 'auto',
+                height: 'auto',
+                resize: 'auto',
+                resizable: true,
+                position: {
+                    my: "left center",
+                    at: "center center",
+                    of: window
+                }
+            });
+        });
+        $('.edit_menu').on('click',function(e) {
+            e.preventDefault();
+            var menuId = $(this).attr("data-id");
+            var addMenu = $('<div id="AddMenu"/>').appendTo("body").load(updUrl + '?menuId=' + menuId + '&t=' + new Date().getTime(), function () {
+                addMenu.dialog("option", "position", { my: "center", at: "center", of: window });
+                $('#Date').datepicker({
+                    closeText: "닫기", // Display text for close link
+                    prevText: "이전 달", // Display text for previous month link
+                    nextText: "다음 달", // Display text for next month link
+                    currentText: "오늘", // Display text for current month link
+                    monthNames: ["1월", "2월", "3월", "4월", "5월", "6월", "7월", "8월", "9월", "10월", "11월", "12월"], // Names of months for drop-down and formatting
+                    monthNamesShort: ["1월", "2월", "3월", "4월", "5월", "6월", "7월", "8월", "9월", "10월", "11월", "12월"], // For formatting
+                    dayNames: ["일요일", "월요일", "화요일", "수요일", "목요일", "금요일", "토요일"], // For formatting
+                    dayNamesShort: ["일", "월", "화", "수", "목", "금", "토"], // For formatting
+                    dayNamesMin: ["일", "월", "화", "수", "목", "금", "토"], // Column headings for days starting at Sunday
+                    weekHeader: "Wk", // Column header for week of the year
+                    dateFormat: "yy-mm-dd", // See format options on parseDate
+                    firstDay: 0, // The first day of the week, Sun = 0, Mon = 1, ...
+                    isRTL: false, // True if right-to-left language, false if left-to-right
+                    showMonthAfterYear: true, // True if the year select precedes month, false for month then year
+                    yearSuffix: "년" // Additional text to append to the year in the month headers
+                });
+                $('.btn-save').on('click', function(e) {
+                    var url = $('#AddFoodMenuForm').attr("action");
+                    $('#AddFoodMenuForm').ajaxSubmit({
+                        url: url,
+                        type: "post",
+                        success: function () {
+                            addMenu.dialog('close');
+                            location.reload();
+                        }
+                    });
+                    //$.ajax({
+                    //    url: url,
+                    //    type: "POST",
+                    //    dataType: "Json",
+                    //    data: $('#AddFoodMenuForm').serialize(),
+                    //    success: function(msg) {
+                    //        if (msg.Result == 1) {
+                    //            addMenu.dialog('close');
+                    //            location.reload();
+                    //        } else {
+                    //            alert(msg.Message);
+                    //        }
+                    //    }
+                    //});
+                });
+                $('.btn-cancel').on('click', function() {
+                    addMenu.dialog('close');
+                });
+            }).dialog({
+                close: function (event, ui) {
+                    $('#AddMenu').remove();
+                },
+                title: '식단등록',
+                modal: true,
+                draggable: true,
+                width: 'auto',
+                height: 'auto',
+                resize: 'auto',
+                resizable: true,
+                position: {
+                    my: "left center",
+                    at: "center center",
+                    of: window
+                }
+            });
+
+        })
+    });
+</script>
+
+
+
+<script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+        m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+    ga('create', 'UA-76743336-1', 'auto');
+    ga('send', 'pageview');
+
+
+    //WebFontConfig = {
+    //    custom: {
+    //        families: ['Nanum Gothic'],
+    //        urls: ['http://fonts.googleapis.com/earlyaccess/nanumgothic.css']
+    //    }
+    //};
+
+    var zoomLev = 1;
+    $(document).ready(function () {
+
+        //var wf = document.createElement('script');
+        //wf.src = ('https:' == document.location.protocol ? 'https' : 'http') +
+        //    '://ajax.googleapis.com/ajax/libs/webfont/1.4.10/webfont.js';
+        //wf.type = 'text/javascript';
+        //wf.async = 'true';
+        //var s = document.getElementsByTagName('script')[0];
+        //s.parentNode.insertBefore(wf, s);
+
+        if ($('.menu-container')) {
+            $('.menu-container').trigger("click");
+        }
+        $('.zoomIn').on('click', function () {
+            if (zoomLev <= 5) {
+                zoomLev += 0.2;
+            }
+            if (zoomLev > 5)
+                zoomLev = 5;
+            window.parent.document.body.style.zoom = zoomLev;
+        });
+
+        $('.zoomInDown').on('click', function () {
+            if (zoomLev >= 0) {
+                zoomLev -= 0.2;
+            }
+            if (zoomLev <= 0)
+                zoomLev = 0.2;
+            window.parent.document.body.style.zoom = zoomLev;
+        });
+        $('.zoomReset').on('click', function() {
+            zoomLev = 1;
+            window.parent.document.body.style.zoom = zoomLev;
+        });
+        $('.family_site_open > li > a,.btm-bannner-list > ul > li > a').on('click', function () {
+            var href = $(this).attr("href");
+            window.open(href);
+        });
+    })
+</script>
+
+
+<div id="lbOverlay" style="display: none;"></div><div id="lbCenter" style="display: none;"><div id="lbImage"><div style="position: relative;"><a id="lbPrevLink" href="#"></a><a id="lbNextLink" href="#"></a></div></div></div><div id="lbBottomContainer" style="display: none;"><div id="lbBottom"><a id="lbCloseLink" href="#"></a><div id="lbCaption"></div><div id="lbNumber"></div><div style="clear: both;"></div></div></div><div id="ui-datepicker-div" class="ui-datepicker ui-widget ui-widget-content ui-helper-clearfix ui-corner-all"></div></body></html>
