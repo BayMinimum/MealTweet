@@ -46,6 +46,7 @@ module.exports= function (callback) {
             // remove \n in start or end
             if(meal.charAt(0)=='\n') meal.replace('\n', "");
             if(meal.charAt(meal.length)=='\n') meal=meal.substring(0, meal.length-1);
+            if(meal.length==0) meal="학교 홈페이지에 식사 정보가 없어요;(";
             meals.push(meal);
         });
         callback(meals);
