@@ -21,33 +21,37 @@ function repeat() {
     else if (17*60+30<=m_total<18*60+30) i=2; // dinner
 
     if(i==-1) return false;
-    else meal(function (meals) {
-        const mealType=["조식", "중식", "석식"];
-        const text=`${yyyy}/${mm}/${dd} ${mealType[i]}\n${meals[i]}`;
-        console.log("Trying to tweet...");
-        console.log(text);
-        var Twitter=require('twitter');
-        var twitter_key={
-            consumer_key: process.env.TWITTER_CONSUMER_KEY,
-            consumer_secret: process.env.TWITTER_CONSUMER_SECRET,
-            access_token_key: process.env.TWITTER_ACCESS_TOKEN_KEY,
-            access_token_secret: process.env.TWITTER_ACCESS_TOKEN_SECRET
-        };
-        if(__test__) twitter_key=require('./twitter_key');
-        var client=new Twitter(twitter_key);
-        client.post('statuses/update', {status:text}, function (err, tweet, res) {
-            if(err){
-                console.log("Tweet failed!");
-                console.log(err);
-                return false;
-            }
-            else{
-                console.log("Tweet success!");
-                clearInterval(interval);
-                return true;
-            }
-        });
-    })
+    else try {
+        return meal(function (meals) {
+            const mealType = ["조식", "중식", "석식"];
+            const text = `${yyyy}/${mm}/${dd} ${mealType[i]}\n${meals[i]}`;
+            console.log("Trying to tweet...");
+            console.log(text);
+            var Twitter = require('twitter');
+            var twitter_key = {
+                consumer_key: process.env.TWITTER_CONSUMER_KEY,
+                consumer_secret: process.env.TWITTER_CONSUMER_SECRET,
+                access_token_key: process.env.TWITTER_ACCESS_TOKEN_KEY,
+                access_token_secret: process.env.TWITTER_ACCESS_TOKEN_SECRET
+            };
+            if (__test__) twitter_key = require('./twitter_key');
+            var client = new Twitter(twitter_key);
+            client.post('statuses/update', {status: text}, function (err, tweet, res) {
+                if (err) {
+                    console.log("Tweet failed!");
+                    console.log(err);
+                    return false;
+                }
+                else {
+                    console.log("Tweet success!");
+                    clearInterval(interval);
+                    return true;
+                }
+            });
+        })
+    }catch (exception){
+        return false;
+    }
 }
 
 if(!repeat()) var interval=setInterval(repeat, 10*60*1000);
