@@ -2,10 +2,21 @@
 Automaticaly tweet meal data from https://ksa.hs.kr/Home/CafeteriaMenu/72
 
 # Deploying
+## Heroku
 Clone this repository, and push to heroku using Heroku CLI.
 
-# Testing
+## Local
+Install node and npm. Install depencidencies by running
+```
+npm install
+```
+from the project root. Then run
+```
+node app.js
+```
+to start the program.
 
+# Testing
 ## Offline test
 To test without network, optain a copy of https://ksa.hs.kr/Home/CafeteriaMenu/72 using your preffered tool, and save as test.html to the project root. Then modify
 ```
