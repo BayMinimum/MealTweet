@@ -1,6 +1,8 @@
 // tweet meal data from meal.js
 // when meal time
+// or snack time
 var meal=require('./meal');
+var snack=require('./snack');
 var time=require("time");
 const __test__=false;
 
@@ -19,35 +21,24 @@ function repeat() {
     if(m_total<60) i=0; // morning
     else if (11*60+40<=m_total && m_total<12*60+40) i=1; // lunch
     else if (17*60+30<=m_total && m_total<18*60+30) i=2; // dinner
+    else if (19*60+30<=m_total && m_total<20*60+30) i=3; // snack
 
     if(i==-1) return false;
-    else try {
+    else if(i!=3) try {
         return meal(function (meals) {
             const mealType = ["조식", "중식", "석식"];
             const text = `${yyyy}/${mm}/${dd} ${mealType[i]}\n${meals[i]}`;
-            console.log("Trying to tweet...");
-            console.log(text);
-            var Twitter = require('twitter');
-            var twitter_key = {
-                consumer_key: process.env.TWITTER_CONSUMER_KEY,
-                consumer_secret: process.env.TWITTER_CONSUMER_SECRET,
-                access_token_key: process.env.TWITTER_ACCESS_TOKEN_KEY,
-                access_token_secret: process.env.TWITTER_ACCESS_TOKEN_SECRET
-            };
-            if (__test__) twitter_key = require('./twitter_key');
-            var client = new Twitter(twitter_key);
-            client.post('statuses/update', {status: text}, function (err, tweet, res) {
-                if (err) {
-                    console.log("Tweet failed!");
-                    console.log(err);
-                    return false;
-                }
-                else {
-                    console.log("Tweet success!");
-                    clearInterval(interval);
-                    return true;
-                }
-            });
+            var tweet= require('./tweet');
+            return tweet(text, interval);
+        })
+    }catch (exception){
+        return false;
+    }
+    else try{
+        return snack(function(snack){
+            const text = `${yyyy}/${mm}/${dd} 간식\n${snack}`;
+            var tweet=require('./tweet');
+            return tweet(text, interval);
         })
     }catch (exception){
         return false;
