@@ -1,4 +1,5 @@
 module.exports=function (text_tweet, interval) {
+    const __test__ = false;
     console.log("Trying to tweet...");
     console.log(text_tweet);
     var Twitter = require('twitter');
