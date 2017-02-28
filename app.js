@@ -27,6 +27,7 @@ function repeat() {
     else if(i!=3) try {
         return meal(function (meals) {
             const mealType = ["조식", "중식", "석식"];
+            if(meals[i]==="") return false;
             const text = `${yyyy}/${mm}/${dd} ${mealType[i]}\n${meals[i]}`;
             var tweet= require('./tweet');
             return tweet(text, interval);
@@ -36,6 +37,7 @@ function repeat() {
     }
     else try{
         return snack(function(snack){
+            if(snack==="") return false;
             const text = `${yyyy}/${mm}/${dd} 간식\n${snack}`;
             var tweet=require('./tweet');
             return tweet(text, interval);

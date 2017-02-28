@@ -1,7 +1,7 @@
 {
   "name": "mealtweet",
-  "version": "0.7.0",
-  "description": "Tweet every KSA meal",
+  "version": "0.7.1",
+  "description": "Tweet every KSA meal and snack",
   "main": "app.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
