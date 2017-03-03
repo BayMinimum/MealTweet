@@ -18,10 +18,10 @@ function repeat() {
     var m_total=60*h+m;
 
     i=-1;
-    if(m_total<60) i=0; // morning
-    else if (11*60+40<=m_total && m_total<12*60+40) i=1; // lunch
-    else if (17*60+30<=m_total && m_total<18*60+30) i=2; // dinner
-    else if (19*60+30<=m_total && m_total<20*60+30) i=3; // snack
+    if(20<=m_total<50) i=0; // morning
+    else if (11*60+40<=m_total && m_total<12*60+10) i=1; // lunch
+    else if (17*60+30<=m_total && m_total<18*60) i=2; // dinner
+    else if (19*60+30<=m_total && m_total<20*60) i=3; // snack
 
     if(i==-1) return false;
     else if(i!=3) try {
@@ -47,7 +47,7 @@ function repeat() {
     }
 }
 
-if(!repeat()) var interval=setInterval(repeat, 10*60*1000);
+if(!repeat()) var interval=setInterval(repeat, 5*60*1000);
 
 // http server to keep bot alive
 var http=require('http');
