@@ -23,6 +23,12 @@ module.exports=function (callback) {
     var parseSnack =function (html) {
         $ = cheerio.load(html, {decodeEntities: false}); // option to avoid unicode hangul issue
         var snack=$(".snack").parent().find(".menu").text();
+        try {
+            snack = snack.substring(1, snack.length);
+        }catch(exception){
+            console.log(exception);
+            console.log("Substring operation for snack failed!");
+        }
         callback(snack);
     }
 
