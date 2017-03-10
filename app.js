@@ -23,7 +23,7 @@ function repeat() {
     if(20<=m_total && m_total<50) i=0; // morning
     else if (11*60+40<=m_total && m_total<12*60+10) i=1; // lunch
     else if (17*60+30<=m_total && m_total<18*60) i=2; // dinner
-    else if (19*60+30<=m_total && m_total<20*60) i=3; // snack
+    else if (19*60+30<=m_total && m_total<20*60 && process.env.SNACK==="ON") i=3; // snack
 
     if(i==-1) return false;
     else if(i!=3) try {
