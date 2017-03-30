@@ -1,15 +1,15 @@
 module.exports=function (callback) {
-    var cheerio = require('cheerio');
-    var http = require('http');
+    let cheerio = require('cheerio');
+    let http = require('http');
 
-    var options = {
+    let options = {
         host: "gaonnuri.ksain.net",
         path: "/xe/?mid=login"
     };
 
     // get html data from school website
-    var data = "";
-    var request = http.request(options, function (res) {
+    let data = "";
+    let request = http.request(options, function (res) {
         res.setEncoding("utf8");
         res.on('data', function (chunk) {
             data += chunk;
@@ -20,9 +20,9 @@ module.exports=function (callback) {
         });
     });
 
-    var parseSnack =function (html) {
+    let parseSnack =function (html) {
         $ = cheerio.load(html, {decodeEntities: false}); // option to avoid unicode hangul issue
-        var snack=$(".snack").parent().find(".menu").text();
+        let snack=$(".snack").parent().find(".menu").text();
         try {
             snack = snack.substring(1, snack.length);
         }catch(exception){
@@ -30,10 +30,10 @@ module.exports=function (callback) {
             console.log("Substring operation for snack failed!");
         }
         callback(snack);
-    }
+    };
 
     request.on('error', function () {
-        throw new Error("Network error");
+        console.log("Network error");
     });
 
     request.end();

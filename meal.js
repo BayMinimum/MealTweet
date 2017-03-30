@@ -1,17 +1,17 @@
 module.exports= function (callback) {
-    var cheerio = require('cheerio');
-    var https = require('https');
+    let cheerio = require('cheerio');
+    let https = require('https');
     const __test__=false;
 
     if (!__test__) {
-        var options = {
+        let options = {
             host: "ksa.hs.kr",
             path: "/Home/CafeteriaMenu/72"
         };
 
         // get html data from school website
-        var data = "";
-        var request = https.request(options, function (res) {
+        let data = "";
+        let request = https.request(options, function (res) {
             res.setEncoding("utf8");
             res.on('data', function (chunk) {
                 data += chunk;
@@ -23,18 +23,18 @@ module.exports= function (callback) {
         });
 
         request.on('error', function () {
-            throw new Error("Network error");
+            console.log("Network error");
         });
 
         request.end();
     }
 
     // pass meal as [breakfast, lunch, dinner] to callback func
-    var parseMeal = function (html) {
+    let parseMeal = function (html) {
         meals = [];
         $ = cheerio.load(html, {decodeEntities: false}); // option to avoid unicode hangul issue
         $(".meal").find('ul').each((i, elem) => {
-            var meal = "";
+            let meal = "";
             $(elem).find('li').each((j, elem) => {
                     meal += $(elem).toString()
                         .replace("<li>", "")
@@ -53,7 +53,7 @@ module.exports= function (callback) {
 
     // test using local copy
     if(__test__) {
-        var fs = require('fs');
+        let fs = require('fs');
         fs.readFile('/home/baymax/WebstormProjects/MealTweet/test.html', (err, data) => {
             if (err) throw err;
             parseMeal(data.toString());

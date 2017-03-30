@@ -1,21 +1,21 @@
 // tweet meal data from meal.js
 // when meal time
 // or snack time
-var meal=require('./meal');
-var snack=require('./snack');
-var time=require("time");
+let meal=require('./meal');
+let snack=require('./snack');
+let time=require("time");
 const __test__=false;
 
 function repeat() {
     // check time
-    var now=new time.Date();
+    let now = new time.Date();
     now.setTimezone("Asia/Seoul");
     const yyyy=now.getFullYear();
     const mm=now.getMonth()+1;
     const dd=now.getDate();
     const h=now.getHours();
     const m=now.getMinutes();
-    var m_total=60*h+m;
+    let m_total = 60 * h + m;
 
     console.log(`Now is ${yyyy}/${mm}/${dd} ${h}:${m}`);
     
@@ -31,7 +31,7 @@ function repeat() {
             const mealType = ["조식", "중식", "석식"];
             if(meals[i]==="") return false;
             const text = `${yyyy}/${mm}/${dd} ${mealType[i]}\n${meals[i]}`;
-            var tweet= require('./tweet');
+            let tweet = require('./tweet');
             return tweet(text, interval);
         })
     }catch (exception){
@@ -41,7 +41,7 @@ function repeat() {
         return snack(function(snack){
             if(snack==="") return false;
             const text = `${yyyy}/${mm}/${dd} 간식\n${snack}`;
-            var tweet=require('./tweet');
+            let tweet = require('./tweet');
             return tweet(text, interval);
         })
     }catch (exception){
@@ -49,10 +49,10 @@ function repeat() {
     }
 }
 
-if(!repeat()) var interval=setInterval(repeat, 5*60*1000);
+if(!repeat()) let interval=setInterval(repeat, 2*60*1000);
 
 // http server to keep bot alive
-var http=require('http');
+let http=require('http');
 http.createServer((req, res)=>{
     res.writeHead(200);
     res.write('<html><head><title>MealTweet Bot</title></head><body>This bot is running:)');
