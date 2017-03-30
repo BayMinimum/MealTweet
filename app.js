@@ -6,6 +6,8 @@ let snack=require('./snack');
 let time=require("time");
 const __test__=false;
 
+let interval=undefined;
+
 function repeat() {
     // check time
     let now = new time.Date();
@@ -19,10 +21,10 @@ function repeat() {
 
     console.log(`Now is ${yyyy}/${mm}/${dd} ${h}:${m}`);
     
-    i=-1;
-    if(20<=m_total && m_total<50) i=0; // morning
-    else if (11*60+40<=m_total && m_total<12*60+10) i=1; // lunch
-    else if (17*60+30<=m_total && m_total<18*60) i=2; // dinner
+    let i=-1;
+    if(5<=m_total && m_total<35) i=0; // morning
+    else if (11*60+20<=m_total && m_total<12*60-10) i=1; // lunch
+    else if (16*60+25<=m_total && m_total<17*60-5) i=2; // dinner
     else if (19*60+30<=m_total && m_total<20*60 && process.env.SNACK==="ON") i=3; // snack
 
     if(i==-1) return false;
@@ -49,7 +51,7 @@ function repeat() {
     }
 }
 
-if(!repeat()) let interval=setInterval(repeat, 2*60*1000);
+if(!repeat()) interval=setInterval(repeat, 2*60*1000);
 
 // http server to keep bot alive
 let http=require('http');

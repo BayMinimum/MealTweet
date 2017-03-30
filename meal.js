@@ -31,7 +31,7 @@ module.exports= function (callback) {
 
     // pass meal as [breakfast, lunch, dinner] to callback func
     let parseMeal = function (html) {
-        meals = [];
+        let meals = [];
         $ = cheerio.load(html, {decodeEntities: false}); // option to avoid unicode hangul issue
         $(".meal").find('ul').each((i, elem) => {
             let meal = "";
@@ -40,7 +40,7 @@ module.exports= function (callback) {
                         .replace("<li>", "")
                         .replace("</li>", "")
                         .replace(/ /g, "")
-                        .replace(/amp\;/g, "");
+                        .replace(/amp;/g, "");
                 }
             );
             // remove \n in start or end
