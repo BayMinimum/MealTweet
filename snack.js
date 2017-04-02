@@ -1,4 +1,5 @@
 module.exports=function (callback) {
+    'use strict';
     let cheerio = require('cheerio');
     let http = require('http');
 

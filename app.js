@@ -1,6 +1,7 @@
 // tweet meal data from meal.js
 // when meal time
 // or snack time
+'use strict';
 let meal=require('./meal');
 let snack=require('./snack');
 let time=require("time");

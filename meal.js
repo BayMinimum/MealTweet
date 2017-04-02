@@ -1,4 +1,5 @@
 module.exports= function (callback) {
+    'use strict';
     let cheerio = require('cheerio');
     let https = require('https');
     const __test__=false;
@@ -6,7 +7,9 @@ module.exports= function (callback) {
     if (!__test__) {
         let options = {
             host: "ksa.hs.kr",
-            path: "/Home/CafeteriaMenu/72"
+            path: "/Home/CafeteriaMenu/72",
+            rejectUnauthorized: false,
+            agent: false
         };
 
         // get html data from school website

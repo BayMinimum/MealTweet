@@ -3,3 +3,5 @@ node_modules/
 /twitter_key.js
 .dockerignore
 Dockerfile
+test.js
+build/
