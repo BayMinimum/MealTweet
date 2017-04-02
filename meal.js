@@ -35,7 +35,7 @@ module.exports= function (callback) {
     // pass meal as [breakfast, lunch, dinner] to callback func
     let parseMeal = function (html) {
         let meals = [];
-        $ = cheerio.load(html, {decodeEntities: false}); // option to avoid unicode hangul issue
+        let $ = cheerio.load(html, {decodeEntities: false}); // option to avoid unicode hangul issue
         $(".meal").find('ul').each((i, elem) => {
             let meal = "";
             $(elem).find('li').each((j, elem) => {

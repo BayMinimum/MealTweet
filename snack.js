@@ -22,7 +22,7 @@ module.exports=function (callback) {
     });
 
     let parseSnack =function (html) {
-        $ = cheerio.load(html, {decodeEntities: false}); // option to avoid unicode hangul issue
+        let $ = cheerio.load(html, {decodeEntities: false}); // option to avoid unicode hangul issue
         let snack=$(".snack").parent().find(".menu").text();
         try {
             snack = snack.substring(1, snack.length);
