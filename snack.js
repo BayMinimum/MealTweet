@@ -24,6 +24,7 @@ module.exports=function (callback) {
     let parseSnack =function (html) {
         let $ = cheerio.load(html, {decodeEntities: false}); // option to avoid unicode hangul issue
         let snack=$(".snack").parent().find(".menu").text();
+        if(snack.indexOf(""))
         try {
             snack = snack.substring(1, snack.length);
         }catch(exception){
