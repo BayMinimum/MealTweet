@@ -24,9 +24,9 @@ module.exports=function (callback) {
     let parseSnack =function (html) {
         let $ = cheerio.load(html, {decodeEntities: false}); // option to avoid unicode hangul issue
         let snack=$(".snack").parent().find(".menu").text();
-        if(snack.indexOf(""))
+        if(snack.indexOf("정보")>=0 && snack.indexOf("없음")>=0) snack = "";
         try {
-            snack = snack.substring(1, snack.length);
+            if(snack.charAt(0)===' ') snack = snack.substring(1, snack.length);
         }catch(exception){
             console.log(exception);
             console.log("Substring operation for snack failed!");
