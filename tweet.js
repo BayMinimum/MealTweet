@@ -22,7 +22,8 @@ module.exports=function (text_tweet, interval) {
             console.log("Tweet success!");
             // clearInterval(interval);
             let msg=require('./messenger_bot.js');
-            return msg(text_tweet, interval);
+            msg(text_tweet, interval);
+            return true;
         }
     });
 };
