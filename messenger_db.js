@@ -9,10 +9,10 @@ module.exports=function msg_db(callback) {
             console.log(err);
             return msg_db(callback);
         }
-        console.log('Connected to postgres! Getting schemas...');
+        console.log('Connected to postgres!');
 
         client
-            .query('SELECT messenger_id FROM bay_schema.id_table;', function(err, res){
+            .query('SELECT messenger_id FROM id_table;', function(err, res){
                 callback(res.rows);
                 client.end(function (err) {
                     if(err){
