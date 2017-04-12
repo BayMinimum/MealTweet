@@ -1,5 +1,5 @@
 module.exports=function (text_msg, interval) {
-    const https = require('http');
+    const https = require('https');
     let options = {
         host: "graph.facebook.com",
         path: `/v2.6/me/messages?access_token=${process.env.PAGE_ACCESS_TOKEN}`,
