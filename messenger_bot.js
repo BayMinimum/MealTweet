@@ -33,7 +33,7 @@ module.exports=function (text_msg, interval) {
             });
 
             // post the data
-            post_req.write(post_data);
+            post_req.write(JSON.stringify(post_data));
             post_req.end();
         }
     });
