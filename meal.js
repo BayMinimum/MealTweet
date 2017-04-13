@@ -47,8 +47,8 @@ module.exports= function (callback) {
                 }
             );
             // remove \n in start or end
-            if(meal.charAt(0)=='\n') meal.replace('\n', "");
-            if(meal.charAt(meal.length)=='\n') meal=meal.substring(0, meal.length-1);
+            if(meal.charAt(0)==='\n') meal.replace('\n', "");
+            if(meal.charAt(meal.length)==='\n') meal=meal.substring(0, meal.length-1);
             meals.push(meal);
         });
         callback(meals);

@@ -5,7 +5,6 @@
 let meal=require('./meal');
 let snack=require('./snack');
 let time=require("time");
-const __test__=false;
 
 let interval=undefined;
 
@@ -26,15 +25,15 @@ function repeat() {
     let i=-1;
     if(5<=m_total && m_total<35) i=0; // morning
     else if (19*60+30<=m_total && m_total<20*60 && process.env.SNACK==="ON") i=3; // snack
-    else if(d==0 || d==6){ // weekends
+    else if(d===0 || d===6){ // weekends
         if (11*60+40<=m_total && m_total<12*60+10) i=1; // lunch
         else if (17*60<=m_total && m_total<17*60+30) i=2; // dinner
     }
     else if (11*60+20<=m_total && m_total<12*60-10) i=1; // lunch
     else if (16*60+25<=m_total && m_total<17*60-5) i=2; // dinner
 
-    if(i==-1) return false;
-    else if(i!=3) try {
+    if(i===-1) return false;
+    else if(i!==3) try {
         return meal(function (meals) {
             const mealType = ["조식", "중식", "석식"];
             if(meals[i]==="") return false;

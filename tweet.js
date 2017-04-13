@@ -1,6 +1,5 @@
 module.exports=function (text_tweet, interval) {
     'use strict';
-    const __test__ = false;
     console.log("Trying to tweet...");
     console.log(text_tweet);
     let Twitter = require('twitter');
@@ -10,7 +9,6 @@ module.exports=function (text_tweet, interval) {
         access_token_key: process.env.TWITTER_ACCESS_TOKEN_KEY,
         access_token_secret: process.env.TWITTER_ACCESS_TOKEN_SECRET
     };
-    if (__test__) twitter_key = require('./twitter_key');
     let client = new Twitter(twitter_key);
     client.post('statuses/update', {status: text_tweet}, function (err, tweet, res) {
         if (err) {
@@ -20,6 +18,7 @@ module.exports=function (text_tweet, interval) {
         }
         else {
             console.log("Tweet success!");
+            console.log(tweet);
             // clearInterval(interval);
             let msg=require('./messenger_bot.js');
             msg(text_tweet, interval);
