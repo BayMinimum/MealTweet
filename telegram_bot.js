@@ -1,29 +1,25 @@
 module.exports=function (text_msg, interval) {
     const https = require('https');
     let options = {
-        host: "graph.facebook.com",
-        path: `/v2.6/me/messages?access_token=${process.env.PAGE_ACCESS_TOKEN}`,
+        host: "api.telegram.org",
+        path: `/bot${process.env.TELEGRAM_TOKEN}/sendMessage`,
         method: "POST",
         headers: {
             'Content-Type': "application/json"
         }
     };
 
-    let msg_db=require('./messenger_db');
+    let msg_db=require('./telegram_db');
     msg_db(function (rows) {
         for(let i=0;i<=rows.length;i+=1) {
             if(i===rows.length){
-                let telegram_bot = require('./telegram_bot');
-                telegram_bot(text_msg, interval);
+                clearInterval(interval);
                 return;
             }
+
             let post_data = {
-                "recipient": {
-                    "id": rows[i].messenger_id
-                },
-                "message": {
-                    "text": text_msg
-                }
+                "chat_id": rows[i].chat_id,
+                "text": text_msg
             };
 
             let post_req = https.request(options, function (res) {
