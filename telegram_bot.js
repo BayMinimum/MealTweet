@@ -18,14 +18,14 @@ module.exports=function (text_msg, interval) {
             }
 
             let post_data = {
-                "chat_id": rows[i].chat_id,
+                "chat_id": rows[i].telegram_id,
                 "text": text_msg
             };
 
             let post_req = https.request(options, function (res) {
                 res.setEncoding('utf8');
                 res.on('data', function (chunk) {
-                    console.log('[MSG SEND] Res: ' + chunk);
+                    console.log('[TELEGRAM SEND] Res: ' + chunk);
                 });
             });
 
