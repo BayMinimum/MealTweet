@@ -1,8 +1,8 @@
-module.exports= function (callback) {
+module.exports = function (callback) {
     'use strict';
     let cheerio = require('cheerio');
     let https = require('https');
-    const __test__=false;
+    const __test__ = false;
 
     if (!__test__) {
         let options = {
@@ -38,7 +38,10 @@ module.exports= function (callback) {
         let $ = cheerio.load(html, {decodeEntities: false}); // option to avoid unicode hangul issue
         $(".meal").find('ul').each((i, elem) => {
             let meal = "";
+            let flag = false;
             $(elem).find('li').each((j, elem) => {
+                    if (flag) meal += "\n";
+                    else flag = true;
                     meal += $(elem).toString()
                         .replace("<li>", "")
                         .replace("</li>", "")
@@ -47,15 +50,15 @@ module.exports= function (callback) {
                 }
             );
             // remove \n in start or end
-            if(meal.charAt(0)==='\n') meal.replace('\n', "");
-            if(meal.charAt(meal.length)==='\n') meal=meal.substring(0, meal.length-1);
+            if (meal.charAt(0) === '\n') meal.replace('\n', "");
+            if (meal.charAt(meal.length) === '\n') meal = meal.substring(0, meal.length - 1);
             meals.push(meal);
         });
         callback(meals);
     };
 
     // test using local copy
-    if(__test__) {
+    if (__test__) {
         let fs = require('fs');
         fs.readFile('/home/baymax/WebstormProjects/MealTweet/test.html', (err, data) => {
             if (err) throw err;
