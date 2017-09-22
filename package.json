@@ -1,6 +1,6 @@
 {
   "name": "mealtweet",
-  "version": "0.7.4",
+  "version": "0.8.1",
   "description": "Tweet every KSA meal and snack",
   "main": "app.js",
   "scripts": {
@@ -19,6 +19,7 @@
   "dependencies": {
     "cheerio": "^0.22.0",
     "iconv-lite": "^0.4.15",
+    "meal_bot_core": "git+https://github.com/BayMinimum/MealBotCore.git",
     "messenger-bot": "^2.4.0",
     "pg": "^6.1.5",
     "time": "^0.11.4",

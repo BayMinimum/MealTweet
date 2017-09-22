@@ -2,8 +2,7 @@
 // when meal time
 // or snack time
 'use strict';
-let meal=require('./meal');
-let snack=require('./snack');
+let meal_bot_core = require("meal_bot_core")
 let time=require("time");
 
 let interval=undefined;
@@ -34,10 +33,10 @@ function repeat() {
 
     if(i===-1) return false;
     else if(i!==3) try {
-        return meal(function (meals) {
+        return meal_bot_core.meal(function (meals) {
             const mealType = ["조식", "중식", "석식"];
-            if(meals[i]==="") return false;
-            const text = `${yyyy}/${mm}/${dd} ${mealType[i]}\n${meals[i]}`;
+            if (meals[0][i] === "") return false
+            const text = `${yyyy}/${mm}/${dd} ${mealType[i]}\n${meals[0][i]}`
             let tweet = require('./tweet');
             return tweet(text, interval);
         })
@@ -45,7 +44,7 @@ function repeat() {
         return false;
     }
     else try{
-        return snack(function(snack){
+            return meal_bot_core.snack(function (snack) {
             if(snack==="") return false;
             const text = `${yyyy}/${mm}/${dd} 간식\n${snack}`;
             let tweet = require('./tweet');
