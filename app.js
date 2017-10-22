@@ -2,8 +2,36 @@
 // when meal time
 // or snack time
 'use strict';
-let meal_bot_core = require("meal_bot_core")
 let time=require("time");
+
+function getFromCore(type, callback) {
+    let data = ""
+    let req = https.request({
+        host: "us-central1-meal-bot-core.cloudfunctions.net",
+        path: "/meal-bot-core",
+        headers: {
+            "Content-Type": "application/json"
+        },
+        method: "POST",
+        agent: false
+    }, function (res) {
+        res.setEncoding("utf8")
+        res.on("data", function (chunk) {
+            data += chunk
+            console.log("received chunk")
+        })
+        res.on("end", function () {
+            callback(data)
+        })
+    })
+    req.write(
+        `{"type":"${type}"}`
+    )
+    req.on("error", (err) => {
+        console.log(err)
+    })
+    req.end()
+}
 
 let interval=undefined;
 
@@ -33,8 +61,9 @@ function repeat() {
 
     if(i===-1) return false;
     else if(i!==3) try {
-        return meal_bot_core.meal(function (meals) {
+        return getFromCore("meal", function (meals) {
             const mealType = ["조식", "중식", "석식"];
+            meals = JSON.parse(meals)
             if (meals[0][i] === "") return false
             const text = `${yyyy}/${mm}/${dd} ${mealType[i]}\n${meals[0][i]}`
             let tweet = require('./tweet');
@@ -44,7 +73,7 @@ function repeat() {
         return false;
     }
     else try{
-            return meal_bot_core.snack(function (snack) {
+            return getFromCore("snack", function (snack) {
             if(snack==="") return false;
             const text = `${yyyy}/${mm}/${dd} 간식\n${snack}`;
             let tweet = require('./tweet');
