@@ -3,10 +3,10 @@
 // or snack time
 'use strict';
 let time = require("time");
-const https = require("https")
+const https = require("https");
 
 function getFromCore(type, callback) {
-  let data = ""
+  let data = "";
   let req = https.request({
     host: "us-central1-meal-bot-core.cloudfunctions.net",
     path: "/meal-bot-core",
@@ -16,21 +16,21 @@ function getFromCore(type, callback) {
     method: "POST",
     agent: false
   }, function (res) {
-    res.setEncoding("utf8")
+    res.setEncoding("utf8");
     res.on("data", function (chunk) {
-      data += chunk
+      data += chunk;
       console.log("received chunk")
-    })
+    });
     res.on("end", function () {
       callback(data)
     })
-  })
+  });
   req.write(
     `{"type":"${type}"}`
-  )
+  );
   req.on("error", (err) => {
     console.log(err)
-  })
+  });
   req.end()
 }
 
@@ -64,9 +64,9 @@ function repeat() {
   else if (i !== 3) try {
     return getFromCore("meal", function (meals) {
       const mealType = ["조식", "중식", "석식"];
-      meals = JSON.parse(meals)
-      if (meals[0][i] === "") return false
-      const text = `${yyyy}/${mm}/${dd} ${mealType[i]}\n${meals[0][i]}`
+      meals = JSON.parse(meals);
+      if (meals[0][i] === "") return false;
+      const text = `${yyyy}/${mm}/${dd} ${mealType[i]}\n${meals[0][i]}`;
       let tweet = require('./tweet');
       return tweet(text, interval);
     })
@@ -85,7 +85,12 @@ function repeat() {
     }
 }
 
-if (!repeat()) interval = setInterval(repeat, 2 * 60 * 1000);
+function main(){
+  if(interval) clearInterval(interval)
+  if(!repeat()) interval = setInterval(repeat, 2 * 60 * 1000);
+}
+
+setInterval(main, 30 * 60 * 1000)
 
 // http server to keep bot alive
 let http = require('http');
